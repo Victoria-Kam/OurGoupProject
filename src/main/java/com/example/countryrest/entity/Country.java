@@ -1,10 +1,23 @@
 package com.example.countryrest.entity;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 public class Country {
+
     private int id;
+    @NotNull
+    @NotBlank
+    @Size(min = 1, max = 20)
     private String name;
     private Currency currency;
+    @NotNull
+    @Size(min = 1, max = 20)
     private String capital;
+    @Size(min = 1)
     private int population;
 
     public String getName() {
